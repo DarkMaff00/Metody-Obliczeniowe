@@ -1,1 +1,1 @@
-Metody-Obliczeniowe
+#Metody-Obliczeniowe
