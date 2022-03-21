@@ -9,8 +9,8 @@ int main()
     double temp_eps = 1.0;
     while ((temp_eps + 1.0) > 1.0) {
         eps = temp_eps;
+        mantissa = -log2(eps);
         cout << "Bity mantysy: "<< mantissa << endl;
-        mantissa += 1;
         cout << "Epsylon: "<< eps << endl;
         temp_eps = temp_eps/2.0;
     }
