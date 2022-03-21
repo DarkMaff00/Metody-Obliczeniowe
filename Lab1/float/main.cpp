@@ -4,13 +4,16 @@ using namespace std;
 
 int main()
 {
+    int mantissa = 0;
     float eps = 1.0f;
-    int t = -1;
-    do {
-        t++;
-        eps = eps/2.0f;
-        cout <<"t="<< t << endl;
-        cout <<"epsylon="<< eps << endl;
-    } while (eps + 1.0f > 1.0f);
+    float temp_eps = 1.0f;
+    while ((temp_eps + 1.0f) > 1.0f) {
+        eps = temp_eps;
+        cout << "Bity mantysy: "<< mantissa << endl;
+        mantissa += 1;
+        cout << "Epsylon: "<< eps << endl;
+        temp_eps = temp_eps/2.0f;
+    }
+    return 0;
 }
 
