@@ -4,8 +4,8 @@ using namespace std;
 
 int main()
 {
-    int mantissa = 0;
-    double eps = 1.0;
+    int mantissa;
+    double eps;
     double temp_eps = 1.0;
     while ((temp_eps + 1.0) > 1.0) {
         eps = temp_eps;
