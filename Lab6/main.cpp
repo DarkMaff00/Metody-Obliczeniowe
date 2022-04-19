@@ -3,7 +3,7 @@
 #define SIZE 6
 using namespace std;
 
-auto c = new double[SIZE];
+auto *c = new double[SIZE];
 
 void fill_u(double *u) {
     u[0] = 1.0 / 2.0;
@@ -39,7 +39,7 @@ void fill_b(double *b) {
     b[5] = 332.0 / 11.0;
 }
 
-void count_eta(double *u, double *d, double *l) {
+void count_eta(const double *u, double *d, const double *l) {
     for (int i = 1; i < SIZE; i++) {
         c[i] = l[i - 1] / d[i - 1];
         d[i] -= (c[i] * u[i - 1]);
@@ -52,7 +52,7 @@ void count_r(double *b) {
     }
 }
 
-void results(double *d, double *u, double *r, double *x) {
+void results(const double *d, const double *u, const double *r, double *x) {
     for (int i = SIZE - 1; i >= 0; i--) {
         if (i == (SIZE - 1)) {
             x[i] = r[i] / d[i];
@@ -69,7 +69,7 @@ void show(double *vector) {
     cout << endl;
 }
 
-bool check(double *u, double *d, double *l, double *x, double *b) {
+bool check(const double *u, const double *d, const double *l, const double *x, const double *b) {
     int counter = 0;
     double sum;
     sum = d[0] * x[0] + u[0] * x[1];
@@ -97,13 +97,13 @@ void thomas(double *u, double *d, double *l, double *b, double *x) {
 }
 
 int main() {
-    auto u = new double[SIZE - 1];
-    auto d = new double[SIZE];
-    auto l = new double[SIZE - 1];
-    auto b = new double[SIZE];
-    auto x = new double[SIZE];
-    auto d2 = new double[SIZE];
-    auto b2 = new double[SIZE];
+    auto *u = new double[SIZE - 1];
+    auto *d = new double[SIZE];
+    auto *l = new double[SIZE - 1];
+    auto *b = new double[SIZE];
+    auto *x = new double[SIZE];
+    auto *d2 = new double[SIZE];
+    auto *b2 = new double[SIZE];
     fill_u(u);
     fill_l(l);
     fill_d(d);
