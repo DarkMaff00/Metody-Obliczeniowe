@@ -97,8 +97,7 @@ bool check(double A[SIZE][SIZE], double b[SIZE], double x[SIZE]) {
         for (int j = 0; j < SIZE; j++) {
             sum += A[i][j] * x[j];
         }
-        sum -= b[i];
-        if (sum == 0.0) {
+        if (sum == b[i]) {
             counter++;
         }
     }
@@ -131,7 +130,7 @@ int main() {
         printf("x%d= %f\n", i + 1, x[i]);
     }
     if (check(a, b, x)) {
-        cout << "Wyniki sa poprawne" << endl;
+        cout << "Good" << endl;
     }
     return 0;
 }

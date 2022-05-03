@@ -73,12 +73,12 @@ bool check(const double *u, const double *d, const double *l, const double *x, c
     int counter = 0;
     double sum;
     sum = d[0] * x[0] + u[0] * x[1];
-    if (b[0] - sum == 0.0) {
+    if (b[0] == sum) {
         counter++;
     }
     for (int i = 0; i < SIZE - 1; i++) {
         sum = l[i] * x[i] + d[i + 1] * x[i + 1] + u[i + 1] * x[i + 2];
-        if (b[i + 1] - sum == 0.0) {
+        if (b[i + 1] == sum) {
             counter++;
         }
     }
